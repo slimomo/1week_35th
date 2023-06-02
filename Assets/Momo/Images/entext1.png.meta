@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6a4525d7247e44a0b82766ad27d00364
+guid: 3308d35a713264059a7ea566ed059295
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,160 +140,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: words_0
+      name: entext1_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 1235
-        width: 554
-        height: 226
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a47c87daba634d3294bc3b1fd58b838
-      internalID: 1677621904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: words_1
-      rect:
-        serializedVersion: 2
-        x: 631
-        y: 1242
-        width: 721
-        height: 219
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b30f3789b185e44be925175487ae3f8e
-      internalID: 1428143226
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: words_2
-      rect:
-        serializedVersion: 2
-        x: 431
-        y: 876
-        width: 593
-        height: 148
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68f31feea38dd4ef5a0ba6569608e6ce
-      internalID: 2142451492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: words_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 865
-        width: 395
-        height: 159
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 558bdf758997c45788e83fee5069ee3c
-      internalID: -533852132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: words_4
-      rect:
-        serializedVersion: 2
-        x: 439
-        y: 699
-        width: 422
-        height: 142
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f567573d29018444b80e64cf347a8009
-      internalID: 1107004493
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: words_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 685
-        width: 408
-        height: 152
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 944f7a782361043c7b6123c7228e9f72
-      internalID: -1219458466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: words_6
-      rect:
-        serializedVersion: 2
-        x: 446
-        y: 259
-        width: 534
-        height: 224
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ff312c2718d14cb3b27b9a822fc2851
-      internalID: -1983937551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: words_7
-      rect:
-        serializedVersion: 2
-        x: 364
+        x: 578
         y: 0
-        width: 644
-        height: 231
+        width: 446
+        height: 330
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,8 +154,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfef8658906a94ba3a0547092b74191d
-      internalID: -203473912
+      spriteID: bfd2295977d6a44449b5b6926a6564d9
+      internalID: 1236512938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: entext1_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 566
+        width: 955
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dfeeef4b80ef4688ab619d05fa752ad
+      internalID: -228999298
       vertices: []
       indices: 
       edges: []
@@ -318,14 +192,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      words_7: -203473912
-      words_3: -533852132
-      words_1: 1428143226
-      words_5: -1219458466
-      words_6: -1983937551
-      words_0: 1677621904
-      words_2: 2142451492
-      words_4: 1107004493
+      entext1_0: 1236512938
+      entext1_1: -228999298
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
