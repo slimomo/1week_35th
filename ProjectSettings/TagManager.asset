@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 2020280479
+    locked: 0
+  - name: Players
+    uniqueID: 1413927965
+    locked: 0
+  - name: FrontObjects
+    uniqueID: 1414401315
+    locked: 0
+  - name: UI
+    uniqueID: 453592103
+    locked: 0
+  - name: Fade
+    uniqueID: 379519137
+    locked: 0
