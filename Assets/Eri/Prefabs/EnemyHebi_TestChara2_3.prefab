@@ -101,10 +101,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_respawnPosInside: {x: 4.8, y: 3.5}
   m_respawnPosOutside: {x: 5.8, y: 6}
-  m_speed: 0.1
-  m_hpMax: 1
-  m_exp: 2
-  m_damage: 5
+  m_speed: 0.02
+  m_hpMax: 3
+  m_exp: 6
+  m_damage: 15
+  m_explosionPrefab: {fileID: 4526787063373413861, guid: 44e1f89bffc424923a7dc0781c586390, type: 3}
+  m_isFollow: 0
+  m_gemPrefabs:
+  - {fileID: -7350415119062375869, guid: 559c2ef77107a4750a1cb4cf0e1e4315, type: 3}
+  - {fileID: 5642162558342788839, guid: b4e14527c48cd44c0b5503e709d3b317, type: 3}
+  - {fileID: -934383487623551212, guid: 79fe372af10b240b7ad87f7961366cac, type: 3}
+  m_gemSpeedMin: 0.125
+  m_gemSpeedMax: 0.01
 --- !u!70 &-4313575575644311990
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

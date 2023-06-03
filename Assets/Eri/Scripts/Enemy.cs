@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 // 敵の出現位置の種類
 public enum RESPAWN_TYPE
@@ -23,6 +24,11 @@ public class Enemy : MonoBehaviour
 
     private int m_hp; // HP
     private Vector3 m_direction; // 進行方向
+    public Explosion m_explosionPrefab; // 爆発エフェクトのプレハブ
+    public bool m_isFollow; // プレイヤーを追尾する場合 true
+    public Gem[] m_gemPrefabs; // 宝石のプレハブを管理する配列
+    public float m_gemSpeedMin; // 生成する宝石の移動の速さ（最小値）
+    public float m_gemSpeedMax; // 生成する宝石の移動の速さ（最大値）
 
     // 敵が生成された時に呼び出される関数
     private void Start()
@@ -34,6 +40,24 @@ public class Enemy : MonoBehaviour
     // 毎フレーム呼び出される関数
     private void Update()
     {
+        // プレイヤーを追尾する場合
+        if ( m_isFollow )
+        {
+    // プレイヤーの現在位置へ向かうベクトルを作成する
+        var angle = Utils.GetAngle( 
+        transform.localPosition, 
+        Player.m_instance.transform.localPosition );
+        var direction = Utils.GetDirection( angle );
+
+    // プレイヤーが存在する方向に移動する
+        transform.localPosition += direction * m_speed;
+
+    // プレイヤーが存在する方向を向く
+        var angles = transform.localEulerAngles;
+        angles.z = angle - 90;
+        transform.localEulerAngles = angles;
+        return;
+        }
         // まっすぐ移動する
         transform.localPosition += m_direction * m_speed;
     }
@@ -98,7 +122,13 @@ if ( collision.name.Contains( "Player" ) )
     // 弾と衝突した場合
     if ( collision.name.Contains( "Shot" ) )
     {
-        print("Shot");
+        // 弾が当たった場所に爆発エフェクトを生成する
+        
+        Instantiate( 
+        m_explosionPrefab, 
+        collision.transform.localPosition, 
+        Quaternion.identity );
+
         // 弾を削除する
         Destroy( collision.gameObject );
 
@@ -110,6 +140,39 @@ if ( collision.name.Contains( "Player" ) )
 
         // 敵を削除する
         Destroy( gameObject );
+
+        /*
+ * 敵が死亡した場合は宝石を散らばらせる
+ *
+ * 例えば、敵を倒した時に獲得できる経験値が 4 で、
+ * 経験値を 1 獲得できる宝石 A と、経験値を 2 獲得できる宝石 B が存在する場合、
+ *
+ * 1. 宝石 A を 4 個
+ * 2. 宝石 A を 2 個、宝石 B を 1 個
+ * 3. 宝石 B を 2 個
+ *
+ * のいずれかのパターンで宝石が散らばる
+ */
+ 
+var exp = m_exp;
+
+while ( 0 < exp ){
+    // 生成可能な宝石を配列で取得する
+    var gemPrefabs = m_gemPrefabs.Where( c => c.m_exp <= exp ).ToArray();
+
+    // 生成可能な宝石の配列から、生成する宝石をランダムに決定する
+    var gemPrefab = gemPrefabs[ Random.Range( 0, gemPrefabs.Length ) ];
+
+    // 敵の位置に宝石を生成する
+    var gem = Instantiate( 
+        gemPrefab, transform.localPosition, Quaternion.identity );
+
+    // 宝石を初期化する
+    gem.Init( m_exp, m_gemSpeedMin, m_gemSpeedMax );
+
+    // まだ宝石を生成できるかどうか計算する
+    exp -= gem.m_exp;
+    }
         }
     }
 }  
