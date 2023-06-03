@@ -25,7 +25,19 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] audioClipsBGM;  // BGMの素材
     public AudioSource audioSourceSE; // SEのスピーカー
     public AudioClip[] audioClipsSE; //SEの素材
+      /*BGM種類について
+    0.スタート画面
+    1.ゲーム画面　通常
+    2.ゲーム画面　ボスが出てきた時
+    クリア・ゲームオーバー時はBGMストップでいいでしょうかね？
+    */
 
+    /*SE種類について
+    0.プレイヤーがレベルアップした時
+    1.プレイヤーがダメージを受けた時
+    2.敵を倒した時
+    3.宝石を取った時
+    */
 
     public void PlayPanelBGM(int Scene)
     {
