@@ -138,6 +138,8 @@ if ( collision.name.Contains( "Player" ) )
         // 敵の HP がまだ残っている場合はここで処理を終える
         if ( 0 < m_hp ) return;
 
+        SoundManager.instance.PlaySE(2);
+
         // 敵を削除する
         Destroy( gameObject );
 

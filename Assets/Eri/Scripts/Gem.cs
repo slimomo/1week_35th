@@ -84,6 +84,9 @@ public class Gem : MonoBehaviour
     // プレイヤーの経験値を増やす
     var player = collision.GetComponent<Player>();
     player.AddExp( m_exp );
+
+    SoundManager.instance.PlaySE(3);
+    
     // 宝石を削除する
     Destroy( gameObject );
     

@@ -119,6 +119,7 @@ private void ShootNWay(
 // 敵とぶつかった時に呼び出される
 public void Damage( int damage )
 {
+    SoundManager.instance.PlaySE(1);
     // HP を減らす
     m_hp -= damage;
 
@@ -153,12 +154,15 @@ public void AddExp( int exp )
     // ボムの発射数や速さは決め打ちで定義しているため
     // 必要であれば public 変数にして、
     // Unity エディタ上で設定できるように変更してください
+    /*
     var angleBase = 0;
     var angleRange = 360;
     var count = 28;
     ShootNWay( angleBase, angleRange, 0.15f, count );
     ShootNWay( angleBase, angleRange, 0.2f, count );
     ShootNWay( angleBase, angleRange, 0.25f, count );
+    */
+    SoundManager.instance.PlaySE(0);
 }
 // 指定されたレベルに必要な経験値を計算する関数
 private int GetNeedExp( int level )
