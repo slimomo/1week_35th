@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Momo/Test_Title.unity
+    guid: 107aa388c932942bf8a0e0dde5055bac
+  - enabled: 1
     path: Assets/Eri/Main.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Momo/Test_Clear.unity
+    guid: a08349ada40fb4966846cfead05f4c59
   m_configObjects: {}
