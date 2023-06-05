@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_respawnPosInside: {x: 4.8, y: 3.5}
   m_respawnPosOutside: {x: 5.8, y: 6}
-  m_speed: 0.08
+  m_speed: 0.001
   m_hpMax: 2
   m_exp: 2
   m_damage: 10

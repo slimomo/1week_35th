@@ -7,12 +7,19 @@ public class Hud : MonoBehaviour
 {
     public Image m_hpGauge; // HP ゲージ
     public Image m_expGauge; // 経験値ゲージ
+    public Text m_levelText;// レベルのテキスト
+    public GameObject gameOverCanvas;
+    public GameObject moePlayer;//プレイヤー
+
 
     // 毎フレーム呼び出される関数
     private void Update()
     {
         // プレイヤーを取得する
         var player = Player.m_instance;
+        // レベルのテキストの表示を更新する
+        m_levelText.text = player.m_level.ToString();
+        
 
         // HP のゲージの表示を更新する
         var hp = player.m_hp;
@@ -25,5 +32,12 @@ public class Hud : MonoBehaviour
         var needExp = player.m_needExp;
         m_expGauge.fillAmount = 
             ( float )( exp - prevNeedExp ) / ( needExp - prevNeedExp );
+        
+        // レベルのテキストの表示を更新する
+        m_levelText.text = player.m_level.ToString();
+        // プレイヤーが非表示ならゲームオーバーと表示する
+        if(moePlayer.activeSelf == false){
+            gameOverCanvas.SetActive(true);
+        }
     }
 }
