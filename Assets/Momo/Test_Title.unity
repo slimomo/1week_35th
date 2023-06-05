@@ -764,7 +764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.798}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12, y: 60}
+  m_AnchoredPosition: {x: 45, y: 123}
   m_SizeDelta: {x: 236.62, y: 75.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &152805636
@@ -2855,7 +2855,7 @@ GameObject:
   - component: {fileID: 537460048}
   - component: {fileID: 537460047}
   m_Layer: 0
-  m_Name: Skip
+  m_Name: Play0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2917,7 +2917,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 1583575416, guid: 3308d35a713264059a7ea566ed059295, type: 3}
+  m_Sprite: {fileID: 1144698775, guid: 3308d35a713264059a7ea566ed059295, type: 3}
   m_Color: {r: 1, g: 0.60018873, b: 0.23113209, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2945,9 +2945,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1900863230}
-          m_TargetAssemblyTypeName: TLmanager, Assembly-CSharp
-          m_MethodName: SkipOne
+        - m_Target: {fileID: 72075083}
+          m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+          m_MethodName: MainScene
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2974,7 +2974,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.86, y: 2.08}
+    oldSize: {x: 4.11, y: 1.73}
     newSize: {x: 2.53, y: 1.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3310,7 +3310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603381146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -259, y: 204, z: -4860}
+  m_LocalPosition: {x: -240, y: 7, z: -4860}
   m_LocalScale: {x: 54, y: 54, z: 54}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9838,7 +9838,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1553530370}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -149, y: 191, z: -4860}
+  m_LocalPosition: {x: -130.00002, y: -6.0000153, z: -4860}
   m_LocalScale: {x: 54, y: 54, z: 54}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9914,7 +9914,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565375641}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -318, y: 144, z: -4860}
+  m_LocalPosition: {x: -299.00003, y: -53.000015, z: -4860}
   m_LocalScale: {x: 54, y: 54, z: 54}
   m_ConstrainProportionsScale: 0
   m_Children:
