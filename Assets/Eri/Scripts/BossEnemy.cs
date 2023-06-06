@@ -49,7 +49,7 @@ public class BossEnemy : MonoBehaviour
         var direction = Utils.GetDirection( angle );
 
     // プレイヤーが存在する方向に移動する
-        transform.localPosition += direction * m_speed;
+        transform.localPosition += direction * m_speed*Time.deltaTime;
 
     // プレイヤーが存在する方向を向く
     /*
@@ -60,7 +60,7 @@ public class BossEnemy : MonoBehaviour
         }
         */
         // まっすぐ移動する
-        transform.localPosition += m_direction * m_speed;
+        transform.localPosition += m_direction * m_speed*Time.deltaTime;
     }
     }
 

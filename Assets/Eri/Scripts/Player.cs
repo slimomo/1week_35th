@@ -29,6 +29,10 @@ public class Player : MonoBehaviour
 	public float m_magnetDistanceFrom; // 宝石を引きつける距離（レベルが最小値の時）
 	public float m_magnetDistanceTo;   // 宝石を引きつける距離（レベルが最大値の時）
 
+	// 前フレーム位置
+	private Vector3 _prevPosition;
+
+
 	// プレイヤーのインスタンスを管理する static 変数
 	public static Player m_instance;
 
@@ -48,6 +52,9 @@ public class Player : MonoBehaviour
 		m_shotInterval   = m_shotIntervalFrom;   // 弾の発射間隔（秒）
 		m_magnetDistance = m_magnetDistanceFrom; // 宝石を引きつける距離
 	}
+	void Start(){
+		_prevPosition = Camera.main.WorldToScreenPoint( transform.position );
+	}
 
 	// 毎フレーム呼び出される関数
 	private void Update()
@@ -58,7 +65,9 @@ public class Player : MonoBehaviour
 
 		// 矢印キーが押されている方向にプレイヤーを移動する
 		var velocity = new Vector3( h, v ) * m_speed;
-		transform.localPosition += velocity;
+		//print("velocity_"+velocity);
+		transform.localPosition += velocity*Time.deltaTime;
+		//print("transform.localpositon_"+transform.localPosition);
 
 		// プレイヤーが画面外に出ないように位置を制限する
 		transform.localPosition = Utils.ClampPosition( transform.localPosition );
@@ -73,9 +82,23 @@ public class Player : MonoBehaviour
 		var angle = Utils.GetAngle( Vector3.zero, direction );
 
 // プレイヤーがマウスカーソルの方向を見るようにする
+/*
 		var angles = transform.localEulerAngles;
 		angles.z                   = angle - 90;
 		transform.localEulerAngles = angles;
+		*/
+
+///弾の方向の取得の計算
+       	// プレイヤーのスクリーン座標を計算する
+
+// プレイヤーから見たマウスカーソルの方向を計算する
+		var PlayerDirection = screenPos - _prevPosition;
+		
+
+// プレイヤーの進むの角度を取得する
+		var Playerangle = Utils.GetAngle( Vector3.zero, PlayerDirection );
+		_prevPosition = screenPos;
+		print("PlayerAngle_"+Playerangle);
 
 		// 弾の発射タイミングを管理するタイマーを更新する
 		m_shotTimer += Time.deltaTime;
@@ -87,10 +110,12 @@ public class Player : MonoBehaviour
 		m_shotTimer = 0;
 
 // 弾を発射する
-		ShootNWay( angle, m_shotAngleRange, m_shotSpeed, m_shotCount );
+        //プレイヤーの進行方向に発射する
+         ShootNWay( Playerangle, m_shotAngleRange, m_shotSpeed, m_shotCount );
+		//ShootNWay( angle, m_shotAngleRange, m_shotSpeed, m_shotCount );
 	}
 
-	// 弾を発射する関数
+	// ３６０度弾を発射する関数
 	private void ShootNWay( 
 		float angleBase, float angleRange, float speed, int count )
 	{

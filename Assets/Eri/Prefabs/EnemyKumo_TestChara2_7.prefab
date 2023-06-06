@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6125472315407376514}
   - component: {fileID: -92965688854356987}
   - component: {fileID: 7335262423431247299}
+  - component: {fileID: 608598043509121923}
   m_Layer: 0
   m_Name: EnemyKumo_TestChara2_7
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -1997840698, guid: d6ea177b08b944eba936eaa398445da6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_respawnPosInside: {x: 4.8, y: 3.5}
   m_respawnPosOutside: {x: 5.8, y: 6}
-  m_speed: 0.001
+  m_speed: 0.8
   m_hpMax: 1
   m_exp: 2
   m_damage: 5
@@ -150,3 +151,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!95 &608598043509121923
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9004649857295281069}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69f6f7338e9f34a7d94c3ae24535ec0e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -1073,7 +1073,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1797551824230441558}
   - component: {fileID: 1797551824230441559}
-  - component: {fileID: 1797551824230441557}
   - component: {fileID: 1797551824230441563}
   - component: {fileID: 1797551824230441556}
   - component: {fileID: 3994980485466017594}
@@ -1109,34 +1108,8 @@ SortingGroup:
   m_GameObject: {fileID: 1797551824230441552}
   m_Enabled: 1
   m_SortingLayerID: 1413927965
-  m_SortingLayer: 2
-  m_SortingOrder: 5
---- !u!114 &1797551824230441557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797551824230441552}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5506e68c9574b4a3997a9e047c3e7244, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_respawnPosInside: {x: 4.8, y: 3.5}
-  m_respawnPosOutside: {x: 5.8, y: 6}
-  m_speed: 0.002
-  m_hpMax: 30
-  m_exp: 6
-  m_damage: 15
-  m_explosionPrefab: {fileID: 4526787063373413861, guid: 44e1f89bffc424923a7dc0781c586390, type: 3}
-  m_isFollow: 1
-  m_gemPrefabs:
-  - {fileID: -7350415119062375869, guid: 559c2ef77107a4750a1cb4cf0e1e4315, type: 3}
-  - {fileID: 5642162558342788839, guid: b4e14527c48cd44c0b5503e709d3b317, type: 3}
-  - {fileID: -934383487623551212, guid: 79fe372af10b240b7ad87f7961366cac, type: 3}
-  m_gemSpeedMin: 0.125
-  m_gemSpeedMax: 0.01
+  m_SortingLayer: 3
+  m_SortingOrder: 3
 --- !u!50 &1797551824230441563
 Rigidbody2D:
   serializedVersion: 4
