@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
 	public float m_shotIntervalTo;     // 弾の発射間隔（秒）（レベルが最大値の時）
 	public float m_magnetDistanceFrom; // 宝石を引きつける距離（レベルが最小値の時）
 	public float m_magnetDistanceTo;   // 宝石を引きつける距離（レベルが最大値の時）
+	public GameObject moeMain;//アニメーションの反転
+	public Animator animator;//moeアニメーター
 
 	// 前フレーム位置
 	private Vector3 _prevPosition;
@@ -100,6 +102,25 @@ public class Player : MonoBehaviour
 		_prevPosition = screenPos;
 		print("PlayerAngle_"+Playerangle);
 
+		if(Playerangle == 90){
+			if(!animator.GetBool("walkB")){
+				animator.SetBool("walkB", true);
+				animator.SetBool("walkF", false);
+			}
+		}
+		else{
+			if(!animator.GetBool("walkF")){
+				animator.SetBool("walkF",true);
+				animator.SetBool("walkB", false);
+			}
+			if(Playerangle <90 && Playerangle >-90){
+				moeMain.transform.rotation = Quaternion.Euler(0, 180, 0);
+			}
+			else{
+				moeMain.transform.rotation = Quaternion.Euler(0, 0, 0);
+			}
+		}
+
 		// 弾の発射タイミングを管理するタイマーを更新する
 		m_shotTimer += Time.deltaTime;
 
@@ -154,9 +175,10 @@ public class Player : MonoBehaviour
 // 敵とぶつかった時に呼び出される
 	public void Damage( int damage )
 	{
+		animator.SetTrigger("damageMoe");
         SoundManager.instance.PlaySE(1);
 		// ダメージを受けた時の SE を再生する
-		var audioSource = FindObjectOfType<AudioSource>();
+		//var audioSource = FindObjectOfType<AudioSource>();
 		//audioSource.PlayOneShot( m_damageClip );
 
 		// HP を減らす

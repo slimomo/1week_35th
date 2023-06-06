@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
    public Enemy[] m_enemyPrefabs; // 敵のプレハブを管理する配列
-   public Enemy bossEnemy;//ボスのプレファブ
+   //public Enemy bossEnemy;//ボスのプレファブ
     //public float m_interval; // 出現間隔（秒）
     public float m_intervalFrom; // 出現間隔（秒）（ゲームの経過時間が 0 の時）
     public float m_intervalTo; // 出現間隔（秒）（ゲームの経過時間が m_elapsedTimeMax の時）
@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour
     public float m_elapsedTime; // 経過時間
     private float m_timer; // 出現タイミングを管理するタイマー
     private bool isBoss;//ボスの出現フラグ
+    [SerializeField] private GameObject BossCanvas;
 
     // 毎フレーム呼び出される関数
     private void Update()
@@ -48,13 +49,11 @@ public class EnemyManager : MonoBehaviour
         enemy.Init( respawnType );
 
         if(m_elapsedTime >40){
+
             if (isBoss == true){
                 return;}
-            // 敵のゲームオブジェクトを生成する
-        enemy = Instantiate(bossEnemy);
-         // 敵を画面外のどの位置に出現させるかランダムに決定する
-        respawnType = ( RESPAWN_TYPE )Random.Range( 
-            0, ( int )RESPAWN_TYPE.SIZEOF );
+            // BossCanvasをアクティブにする
+            BossCanvas.SetActive(true);
             isBoss = true;
         }
     }

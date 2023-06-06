@@ -954,6 +954,8 @@ MonoBehaviour:
   m_shotIntervalTo: 0.2
   m_magnetDistanceFrom: 1
   m_magnetDistanceTo: 2
+  moeMain: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!212 &125998456
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6789,11 +6791,11 @@ MonoBehaviour:
   - {fileID: 5666360156649526306, guid: e0c0b8d56fb63486997d6ae7712b1ed6, type: 3}
   - {fileID: 6125472315407376514, guid: 77ba0aac7bd8e41e28acb6113b694689, type: 3}
   - {fileID: -1219145097652221762, guid: 7ec5619e9e7224e25831953f61821d36, type: 3}
-  bossEnemy: {fileID: 1797551824230441557, guid: 0317a7d148ce842f39c9d76771d43c94, type: 3}
   m_intervalFrom: 1
   m_intervalTo: 0.25
   m_elapsedTimeMax: 60
   m_elapsedTime: 0
+  BossCanvas: {fileID: 36348259}
 --- !u!4 &374989824
 Transform:
   m_ObjectHideFlags: 0
@@ -7782,7 +7784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &509606380
 Transform:
   m_ObjectHideFlags: 0
@@ -16294,14 +16296,14 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269326147}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19968247, y: 0}
-  m_Size: {x: 1.399365, y: 2}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 1}
   m_Direction: 0
 --- !u!114 &1269326151
 MonoBehaviour:
@@ -16338,6 +16340,8 @@ MonoBehaviour:
   m_shotIntervalTo: 0.2
   m_magnetDistanceFrom: 1
   m_magnetDistanceTo: 2
+  moeMain: {fileID: 1904220096}
+  animator: {fileID: 1904220098}
 --- !u!1 &1278113525
 GameObject:
   m_ObjectHideFlags: 0
@@ -22093,6 +22097,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1797551824230441558, guid: 0317a7d148ce842f39c9d76771d43c94, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994980485466017594, guid: 0317a7d148ce842f39c9d76771d43c94, type: 3}
+      propertyPath: m_hpMax
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3994980485466017594, guid: 0317a7d148ce842f39c9d76771d43c94, type: 3}
