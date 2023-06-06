@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class SEmanager : MonoBehaviour
 {
-   
+    public void SEGameOver()
+    {
+        SoundManager.instance.PlaySE(4);
+    }
+    
     public void SEButton()
     {
 
@@ -22,6 +26,10 @@ public class SEmanager : MonoBehaviour
 
         SoundManager.instance.PlaySE(7);
     }
-    
+     public void SEAllClear()
+    {
+
+        SoundManager.instance.PlaySE(8);
+    }
 
 }

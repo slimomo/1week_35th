@@ -1,4 +1,7 @@
 using UnityEngine;
+//unity eventを使うために必要
+using UnityEngine.Events;
+
 
 // プレイヤーを制御するコンポーネント
 public class Player : MonoBehaviour
@@ -37,6 +40,9 @@ public class Player : MonoBehaviour
 
 	// プレイヤーのインスタンスを管理する static 変数
 	public static Player m_instance;
+
+	// unity eventを使うために必要
+	public UnityEvent GameOverEvent;
 
 	// ゲーム開始時に呼び出される関数
 	private void Awake()
@@ -189,6 +195,9 @@ public class Player : MonoBehaviour
 
 		// プレイヤーが死亡したので非表示にする
 		// 本来であれば、ここでゲームオーバー演出を再生したりする
+
+		//イベント追加
+		GameOverEvent?.Invoke();
 		gameObject.SetActive( false );
 	}
 
