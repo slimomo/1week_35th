@@ -42,6 +42,7 @@ public class SoundManager : MonoBehaviour
     5.ボタン音
     6.キャンセル音
     7.画面遷移音
+    8.ボスクリア時
 
     */
 
