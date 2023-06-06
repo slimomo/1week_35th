@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
 // プレイヤーの進むの角度を取得する
 		var Playerangle = Utils.GetAngle( Vector3.zero, PlayerDirection );
 		_prevPosition = screenPos;
-		print("PlayerAngle_"+Playerangle);
+		//print("PlayerAngle_"+Playerangle);
 
 		if(Playerangle == 90){
 			if(!animator.GetBool("walkB")){

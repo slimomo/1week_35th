@@ -28,6 +28,8 @@ public class BossEnemy : MonoBehaviour
     public Gem[] m_gemPrefabs; // 宝石のプレハブを管理する配列
     public float m_gemSpeedMin; // 生成する宝石の移動の速さ（最小値）
     public float m_gemSpeedMax; // 生成する宝石の移動の速さ（最大値）
+    public GameObject bossMain;//アニメーションの反転
+    public Animator animator;//Bossアニメーター
 
     // 敵が生成された時に呼び出される関数
     private void Start()
@@ -48,6 +50,8 @@ public class BossEnemy : MonoBehaviour
         Player.m_instance.transform.localPosition );
         var direction = Utils.GetDirection( angle );
 
+        print("Bossdangle_"+angle);
+
     // プレイヤーが存在する方向に移動する
         transform.localPosition += direction * m_speed*Time.deltaTime;
 
@@ -61,8 +65,25 @@ public class BossEnemy : MonoBehaviour
         */
         // まっすぐ移動する
         transform.localPosition += m_direction * m_speed*Time.deltaTime;
+  
+			if(angle <90 && angle >-90){
+				bossMain.transform.rotation = Quaternion.Euler(0, 180, 0);
+             
+                print("righe");
+			}
+			else{
+				bossMain.transform.rotation = Quaternion.Euler(0, 0, 0);
+                //if(!animator.GetBool("walk_F")){
+				//animator.SetBool("walk_F",true);
+                print("left");
+			}
+               if(!animator.GetBool("walk_F")){
+				animator.SetBool("walk_F",true);
+		
+        }
+        }
     }
-    }
+
 
     // 敵が出現する時に初期化する関数
     public void Init( RESPAWN_Position respawnPosition )
@@ -115,6 +136,7 @@ public class BossEnemy : MonoBehaviour
         // プレイヤーと衝突した場合
 if ( collision.name.Contains( "Player" ) )
 {
+    animator.SetTrigger("attack");
     // プレイヤーにダメージを与える
     var player = collision.GetComponent<Player>();
     player.Damage( m_damage );
@@ -124,6 +146,7 @@ if ( collision.name.Contains( "Player" ) )
     // 弾と衝突した場合
     if ( collision.name.Contains( "Shot" ) )
     {
+        animator.SetTrigger("damage");
         // 弾が当たった場所に爆発エフェクトを生成する
         
         Instantiate( 
