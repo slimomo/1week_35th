@@ -29,6 +29,7 @@ public class SoundManager : MonoBehaviour
     0.スタート画面
     1.ゲーム画面　通常
     2.ゲーム画面　ボスが出てきた時
+    3.ゲームクリア
     クリア・ゲームオーバー時はBGMストップでいいでしょうかね？
     */
 
@@ -37,6 +38,11 @@ public class SoundManager : MonoBehaviour
     1.プレイヤーがダメージを受けた時
     2.敵を倒した時
     3.宝石を取った時
+    4.ゲームオーバー時
+    5.ボタン音
+    6.キャンセル音
+    7.画面遷移音
+
     */
 
     public void PlayPanelBGM(int Scene)
@@ -57,6 +63,11 @@ public class SoundManager : MonoBehaviour
                 audioSourceBGM.clip = audioClipsBGM[2];
                
                 break;
+            case 3:
+                audioSourceBGM.clip = audioClipsBGM[3];
+                
+                break;
+
             
         }
         audioSourceBGM.Play();

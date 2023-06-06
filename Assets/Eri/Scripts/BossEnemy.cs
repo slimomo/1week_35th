@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+//unity eventを使うために必要
+using UnityEngine.Events;
 
 // 敵の出現位置の種類
 public enum RESPAWN_Position
@@ -30,6 +32,9 @@ public class BossEnemy : MonoBehaviour
     public float m_gemSpeedMax; // 生成する宝石の移動の速さ（最大値）
     public GameObject bossMain;//アニメーションの反転
     public Animator animator;//Bossアニメーター
+
+    //追加項目//
+    public UnityEvent OnBossDead;//ボスが死んだ時に呼び出すイベント
 
     // 敵が生成された時に呼び出される関数
     private void Start()
@@ -166,7 +171,11 @@ if ( collision.name.Contains( "Player" ) )
         SoundManager.instance.PlaySE(2);
 
         // 敵を削除する
+        //Destroy( gameObject );
+        // 敵を削除し
         Destroy( gameObject );
+        //  クリアイベントを発行する
+        OnBossDead?.Invoke();
 
         /*
  * 敵が死亡した場合は宝石を散らばらせる

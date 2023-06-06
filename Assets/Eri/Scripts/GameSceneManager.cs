@@ -11,6 +11,6 @@ public class GameSceneManager : MonoBehaviour
     }
 
     public void MainSound(){
-        SoundManager.instance.PlayPanelBGM(0);
+        SoundManager.instance.PlayPanelBGM(1);
     }
 }
