@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
         var direction = Utils.GetDirection( angle );
 
     // プレイヤーが存在する方向に移動する
-        transform.localPosition += direction * m_speed;
+        transform.localPosition += direction * m_speed*Time.deltaTime;
 
     // プレイヤーが存在する方向を向く
         var angles = transform.localEulerAngles;
@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
         return;
         }
         // まっすぐ移動する
-        transform.localPosition += m_direction * m_speed;
+        transform.localPosition += m_direction * m_speed*Time.deltaTime;
     }
 
     // 敵が出現する時に初期化する関数
