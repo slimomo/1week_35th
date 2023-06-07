@@ -199,7 +199,7 @@ QualitySettings:
     Server: 0
     Stadia: 4
     Standalone: 2
-    WebGL: 2
+    WebGL: 3
     Windows Store Apps: 4
     XboxOne: 4
     iPhone: 2
