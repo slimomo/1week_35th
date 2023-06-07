@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 //unity eventを使うために必要
 using UnityEngine.Events;
 
@@ -33,6 +34,9 @@ public class Player : MonoBehaviour
 	public float m_magnetDistanceTo;   // 宝石を引きつける距離（レベルが最大値の時）
 	public GameObject moeMain;//アニメーションの反転
 	public Animator animator;//moeアニメーター
+	private bool isGameOver;//MoeのHPが０以下になったらGameOver
+	public GameObject Result_Canvas;//ゲームオーバー時に表示する
+	
 
 	// 前フレーム位置
 	private Vector3 _prevPosition;
@@ -192,7 +196,8 @@ public class Player : MonoBehaviour
 
 		// HP がまだある場合、ここで処理を終える
 		if ( 0 < m_hp ) return;
-
+		
+		Result_Canvas.SetActive(true);
 		// プレイヤーが死亡したので非表示にする
 		// 本来であれば、ここでゲームオーバー演出を再生したりする
 

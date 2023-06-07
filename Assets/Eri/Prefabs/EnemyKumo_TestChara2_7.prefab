@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 608598043509121923}
   m_Layer: 0
   m_Name: EnemyKumo_TestChara2_7
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -508,10 +508,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_respawnPosInside: {x: 4.8, y: 3.5}
   m_respawnPosOutside: {x: 5.8, y: 6}
-  m_speed: 0.8
+  m_speed: 0.6
   m_hpMax: 1
   m_exp: 2
-  m_damage: 5
+  m_damage: 2
   m_explosionPrefab: {fileID: 4526787063373413861, guid: 44e1f89bffc424923a7dc0781c586390, type: 3}
   m_isFollow: 0
   m_gemPrefabs:
@@ -533,8 +533,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.062403288, y: -0.020391738}
-  m_Size: {x: 3.287825, y: 2.202575}
+  m_Offset: {x: -0.09309166, y: -0.20452322}
+  m_Size: {x: 2.91957, y: 1.8343216}
   m_Direction: 1
 --- !u!50 &7335262423431247299
 Rigidbody2D:

@@ -1658,6 +1658,7 @@ MonoBehaviour:
   m_magnetDistanceTo: 2
   moeMain: {fileID: 0}
   animator: {fileID: 0}
+  Result_Canvas: {fileID: 0}
   GameOverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -8379,10 +8380,12 @@ MonoBehaviour:
   - {fileID: 6125472315407376514, guid: 77ba0aac7bd8e41e28acb6113b694689, type: 3}
   - {fileID: -1219145097652221762, guid: 7ec5619e9e7224e25831953f61821d36, type: 3}
   m_intervalFrom: 1
-  m_intervalTo: 0.25
+  m_intervalTo: 0.3
   m_elapsedTimeMax: 60
   m_elapsedTime: 0
   BossCanvas: {fileID: 36348259}
+  ClearCanvas: {fileID: 2000690434}
+  Player_Moe: {fileID: 1269326147}
 --- !u!4 &374989824
 Transform:
   m_ObjectHideFlags: 0
@@ -16698,7 +16701,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.389
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -18603,6 +18606,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884587038}
+  m_CullTransparentMesh: 1
+--- !u!1 &909126153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 909126154}
+  - component: {fileID: 909126156}
+  - component: {fileID: 909126155}
+  m_Layer: 5
+  m_Name: lifeImage (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &909126154
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909126153}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6477.6997}
+  m_LocalScale: {x: 1, y: 3, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1838832200}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 175.17, y: 16.98}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &909126155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909126153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9150943, g: 0.46186364, b: 0.8834429, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 076290e103a18473faa8a33ea7041862, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &909126156
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909126153}
   m_CullTransparentMesh: 1
 --- !u!1 &911872830
 GameObject:
@@ -21108,12 +21187,12 @@ MonoBehaviour:
   m_speed: 0.7
   m_shotPrefab: {fileID: 393708917709360455, guid: 174578757c20944e8be36e6f60583266, type: 3}
   m_shotSpeed: 0.006
-  m_shotAngleRange: 20
+  m_shotAngleRange: 25
   m_shotTimer: 0
   m_shotCount: 5
   m_shotInterval: 0.4
-  m_hpMax: 200
-  m_hp: 200
+  m_hpMax: 100
+  m_hp: 100
   m_magnetDistance: 2
   m_nextExpBase: 10
   m_nextExpInterval: 12
@@ -21130,6 +21209,7 @@ MonoBehaviour:
   m_magnetDistanceTo: 2
   moeMain: {fileID: 1904220096}
   animator: {fileID: 1904220098}
+  Result_Canvas: {fileID: 1820357017}
   GameOverEvent:
     m_PersistentCalls:
       m_Calls:
@@ -24392,7 +24472,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.389
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -25139,7 +25219,7 @@ GameObject:
   - component: {fileID: 1637980565}
   - component: {fileID: 1637980564}
   m_Layer: 5
-  m_Name: Image
+  m_Name: lifeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25955,7 +26035,7 @@ GameObject:
   - component: {fileID: 1750971315}
   - component: {fileID: 1750971314}
   m_Layer: 5
-  m_Name: Image
+  m_Name: exImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26639,6 +26719,7 @@ RectTransform:
   - {fileID: 1681556998}
   - {fileID: 710333090}
   - {fileID: 1544480962}
+  - {fileID: 909126154}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26659,11 +26740,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1817ed007bdcc4d2bb92e2458b8d0347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hpGauge: {fileID: 1620203075}
-  m_expGauge: {fileID: 1974547725}
+  m_hpGauge: {fileID: 1637980564}
+  m_expGauge: {fileID: 1750971314}
   m_levelText: {fileID: 1243589982}
-  gameOverCanvas: {fileID: 1820357017}
   moePlayer: {fileID: 1269326147}
+  ex: {fileID: 710333091}
+  life: {fileID: 1544480963}
 --- !u!1 &1870183803
 GameObject:
   m_ObjectHideFlags: 0
@@ -27672,7 +27754,7 @@ GameObject:
   - component: {fileID: 1957046742}
   - component: {fileID: 1957046743}
   m_Layer: 0
-  m_Name: GameSceneManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48358,9 +48440,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9001384361015739654, guid: 0317a7d148ce842f39c9d76771d43c94, type: 3}
-      propertyPath: m_hpMax
-      value: 80
+      propertyPath: m_hp
+      value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 9001384361015739654, guid: 0317a7d148ce842f39c9d76771d43c94, type: 3}
+      propertyPath: m_exp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001384361015739654, guid: 0317a7d148ce842f39c9d76771d43c94, type: 3}
+      propertyPath: m_hpMax
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001384361015739654, guid: 0317a7d148ce842f39c9d76771d43c94, type: 3}
+      propertyPath: m_speed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001384361015739654, guid: 0317a7d148ce842f39c9d76771d43c94, type: 3}
+      propertyPath: EnemyManager
+      value: 
+      objectReference: {fileID: 374989822}
     - target: {fileID: 9001384361015739654, guid: 0317a7d148ce842f39c9d76771d43c94, type: 3}
       propertyPath: m_timelineObject
       value: 

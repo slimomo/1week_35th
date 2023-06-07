@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: -680750035399431319}
   m_Layer: 0
   m_Name: EnemyNezu_TestChara2_8
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,10 +158,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_respawnPosInside: {x: 4.8, y: 3.5}
   m_respawnPosOutside: {x: 5.8, y: 6}
-  m_speed: 1
+  m_speed: 0.4
   m_hpMax: 2
-  m_exp: 2
-  m_damage: 10
+  m_exp: 4
+  m_damage: 4
   m_explosionPrefab: {fileID: 4526787063373413861, guid: 44e1f89bffc424923a7dc0781c586390, type: 3}
   m_isFollow: 0
   m_gemPrefabs:
@@ -183,8 +183,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14771304, y: -0.004624742}
-  m_Size: {x: 3.120842, y: 2.4582741}
+  m_Offset: {x: -0.00047181838, y: -0.0046246937}
+  m_Size: {x: 2.989125, y: 2.4582822}
   m_Direction: 1
 --- !u!50 &-680750035399431319
 Rigidbody2D:
