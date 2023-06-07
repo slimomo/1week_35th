@@ -11,7 +11,7 @@ public class Shot : MonoBehaviour
     private void Update()
     {
         // 移動する
-        transform.localPosition += m_velocity;
+        transform.localPosition += m_velocity*Time.deltaTime;
     }
 
     // 弾を発射する時に初期化するための関数

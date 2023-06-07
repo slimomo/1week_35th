@@ -54,7 +54,7 @@ public class EnemyManager : MonoBehaviour
         // 敵を初期化する
         enemy.Init( respawnType );
 
-        if(m_elapsedTime >10){
+        if(m_elapsedTime >40){
 
             if (isBoss == true){
                 return;}
