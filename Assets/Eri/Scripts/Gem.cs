@@ -73,17 +73,18 @@ public class Gem : MonoBehaviour
         m_speed = Mathf.Lerp( speedMin, speedMax, Random.value );
 
         // 8 秒後に宝石を削除する
-        Destroy( gameObject, 1 );
+        Destroy( gameObject, 2 );
     }
     // 他のオブジェクトと衝突した時に呼び出される関数
     private void OnTriggerEnter2D( Collider2D collision )
     {
     // 衝突したオブジェクトがプレイヤーではない場合は無視する
     if ( !collision.name.Contains( "Player" ) ) return;
-
+    //Enemy.csで経験値は処理する
+    /*
     // プレイヤーの経験値を増やす
     var player = collision.GetComponent<Player>();
-    player.AddExp( m_exp );
+    player.AddExp( m_exp );*/
 
     SoundManager.instance.PlaySE(3);
     

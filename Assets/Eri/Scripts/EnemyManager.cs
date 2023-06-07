@@ -14,11 +14,14 @@ public class EnemyManager : MonoBehaviour
     private float m_timer; // 出現タイミングを管理するタイマー
     private bool isBoss;//ボスの出現フラグ
     [SerializeField] private GameObject BossCanvas;
+    private bool isEnding;//終わりになったらEnemyの生成はやめる
+    [SerializeField] GameObject ClearCanvas;
+    [SerializeField] GameObject Player_Moe;
 
     // 毎フレーム呼び出される関数
-    private void Update()
-
-    {  // 経過時間を更新する
+    private void Update(){
+        if(isEnding)return;
+        // 経過時間を更新する
         m_elapsedTime += Time.deltaTime;
         // 出現タイミングを管理するタイマーを更新する
         m_timer += Time.deltaTime;
@@ -40,6 +43,9 @@ public class EnemyManager : MonoBehaviour
 
         // 敵のゲームオブジェクトを生成する
         var enemy = Instantiate( enemyPrefab );
+        //生成したenemyの親にEnemyManagerを設定しておく
+        enemy.transform.SetParent(gameObject.transform, false);
+        enemy.GetComponent<Enemy>().ExpPlayer =Player_Moe;
 
         // 敵を画面外のどの位置に出現させるかランダムに決定する
         var respawnType = ( RESPAWN_TYPE )Random.Range( 
@@ -48,7 +54,7 @@ public class EnemyManager : MonoBehaviour
         // 敵を初期化する
         enemy.Init( respawnType );
 
-        if(m_elapsedTime >40){
+        if(m_elapsedTime >10){
 
             if (isBoss == true){
                 return;}
@@ -57,4 +63,18 @@ public class EnemyManager : MonoBehaviour
             isBoss = true;
         }
     }
+    public void EnemysDestroy(){
+        //enemyの生成をやめる
+        isEnding = true;
+        // EnemyManager の子要素を取得
+        int childCount = transform.childCount;
+        for (int i = childCount - 1; i >= 0; i--)
+        {
+            GameObject child = transform.GetChild(i).gameObject;
+            Destroy(child);
+        }
+        Player_Moe.SetActive(false);
+        ClearCanvas.SetActive(true);
+    }
+
 }

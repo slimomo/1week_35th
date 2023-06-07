@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 8029519746529872730}
   m_Layer: 0
   m_Name: EnemyHebi_TestChara2_3
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,10 +326,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_respawnPosInside: {x: 4.8, y: 3.5}
   m_respawnPosOutside: {x: 5.8, y: 6}
-  m_speed: 0.5
+  m_speed: 0.3
   m_hpMax: 3
   m_exp: 6
-  m_damage: 15
+  m_damage: 3
   m_explosionPrefab: {fileID: 4526787063373413861, guid: 44e1f89bffc424923a7dc0781c586390, type: 3}
   m_isFollow: 0
   m_gemPrefabs:
@@ -351,8 +351,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010000092, y: -0.1776002}
-  m_Size: {x: 4.290957, y: 2.3972037}
+  m_Offset: {x: -0.5694472, y: 0.08310703}
+  m_Size: {x: 2.918637, y: 2.918637}
   m_Direction: 1
 --- !u!50 &8029519746529872730
 Rigidbody2D:

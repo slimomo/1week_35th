@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour
     public Gem[] m_gemPrefabs; // 宝石のプレハブを管理する配列
     public float m_gemSpeedMin; // 生成する宝石の移動の速さ（最小値）
     public float m_gemSpeedMax; // 生成する宝石の移動の速さ（最大値）
+    public GameObject ExpPlayer;//もえについているPlayer.csを操作
+    
 
     // 敵が生成された時に呼び出される関数
     private void Start()
@@ -138,6 +140,10 @@ if ( collision.name.Contains( "Player" ) )
         // 敵の HP がまだ残っている場合はここで処理を終える
         if ( 0 < m_hp ) return;
 
+        //プレイヤーに経験値を与える
+
+        ExpPlayer.GetComponent<Player>().AddExp( m_exp );
+
         SoundManager.instance.PlaySE(2);
 
         // 敵を削除する
@@ -176,5 +182,10 @@ while ( 0 < exp ){
     exp -= gem.m_exp;
     }
         }
+    }
+
+    //Bossが倒された時に敵を一斉に削除するようにスクリプト
+    public void EndingDestroy(){
+        Destroy(gameObject);
     }
 }  
