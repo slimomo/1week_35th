@@ -160,7 +160,7 @@ MonoBehaviour:
   m_respawnPosOutside: {x: 5.8, y: 6}
   m_speed: 0.4
   m_hpMax: 2
-  m_exp: 4
+  m_exp: 2
   m_damage: 4
   m_explosionPrefab: {fileID: 4526787063373413861, guid: 44e1f89bffc424923a7dc0781c586390, type: 3}
   m_isFollow: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   - {fileID: -934383487623551212, guid: 79fe372af10b240b7ad87f7961366cac, type: 3}
   m_gemSpeedMin: 0.125
   m_gemSpeedMax: 0.07
+  ExpPlayer: {fileID: 0}
 --- !u!70 &141527630947488663
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

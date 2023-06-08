@@ -165,6 +165,8 @@ public class Player : MonoBehaviour
 
 				// 発射する弾を生成する
 				var shot = Instantiate( m_shotPrefab, pos, rot );
+				//生成したshotoの親にPlayerを設定しておく
+				shot.transform.SetParent(gameObject.transform, true);
 
 				// 弾を発射する方向と速さを設定する
 				shot.Init( angle, speed );
@@ -175,6 +177,8 @@ public class Player : MonoBehaviour
 		{
 			// 発射する弾を生成する
 			var shot = Instantiate( m_shotPrefab, pos, rot );
+				//生成したshotoの親にPlayerを設定しておく
+				shot.transform.SetParent(gameObject.transform, true);
 
 			// 弾を発射する方向と速さを設定する
 			shot.Init( angleBase, speed );
@@ -276,5 +280,14 @@ public class Player : MonoBehaviour
 		 */
 		return m_nextExpBase + 
 		       m_nextExpInterval * ( ( level - 1 ) * ( level - 1 ) );
+	}
+	//ゲームクリア時にどんぐり弾を削除する
+	public void ShotsDestroy(){
+		int childCount = transform.childCount;
+        for (int i = childCount - 1; i >= 0; i--)
+        {
+            GameObject child = transform.GetChild(i).gameObject;
+            Destroy(child);
+        }
 	}
 }

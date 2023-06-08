@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine; 
+using DG.Tweening;//DOTween
 
 public class Gem : MonoBehaviour
 {
@@ -13,7 +14,41 @@ public class Gem : MonoBehaviour
     public float m_followAccel = 0.01f;
     private bool m_isFollow; // プレイヤーを追尾するモードに入った場合 true
     private float m_followSpeed; // プレイヤーを追尾する速さ
+    public Transform sliderexTransform; // SliderexのTransform
 
+    void Awake(){
+        GameObject sliderexObject = GameObject.FindGameObjectWithTag("sliderEX");
+        
+        if (sliderexObject != null)
+        {
+            sliderexTransform = sliderexObject.transform;
+        }
+        else
+        {
+            print("sliderEX見つからない");
+        }
+    }
+
+    private void Start()
+    {
+        // Gemの現在の位置からSliderexの位置までのパスを作成
+        Vector3[] path = { transform.position, sliderexTransform.position };
+
+        // パスの移動にかかる時間やイージングなどのオプションを設定
+        float duration = 2.0f; // 移動にかかる時間
+        Ease easeType = Ease.OutQuart; // イージングの種類
+
+        // パスの移動アニメーションを実行し、終了時にDestroyする
+        transform.DOPath(path, duration, PathType.CatmullRom)
+            .SetEase(easeType)
+            .SetLink(gameObject)
+            .OnComplete(() => DestroyGem());
+    }
+
+    void DestroyGem(){
+        Destroy(gameObject);
+    }
+    /*
     // 毎フレーム呼び出される関数
     private void Update()
     {
@@ -56,6 +91,7 @@ public class Gem : MonoBehaviour
         transform.localPosition = 
             Utils.ClampPosition( transform.localPosition );
     }
+    */
 
     // 宝石が出現する時に初期化する関数
     public void Init( int score, float speedMin, float speedMax )
@@ -73,8 +109,9 @@ public class Gem : MonoBehaviour
         m_speed = Mathf.Lerp( speedMin, speedMax, Random.value );
 
         // 8 秒後に宝石を削除する
-        Destroy( gameObject, 2 );
+        //Destroy( gameObject, 2 );
     }
+    /*
     // 他のオブジェクトと衝突した時に呼び出される関数
     private void OnTriggerEnter2D( Collider2D collision )
     {
@@ -84,12 +121,11 @@ public class Gem : MonoBehaviour
     /*
     // プレイヤーの経験値を増やす
     var player = collision.GetComponent<Player>();
-    player.AddExp( m_exp );*/
+    player.AddExp( m_exp );
 
     SoundManager.instance.PlaySE(3);
     
     // 宝石を削除する
     Destroy( gameObject );
-    
-    }
+    }*/
 }
