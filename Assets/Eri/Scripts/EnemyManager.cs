@@ -66,6 +66,7 @@ public class EnemyManager : MonoBehaviour
     public void EnemysDestroy(){
         //enemyの生成をやめる
         isEnding = true;
+        Player_Moe.GetComponent<Player>().ShotsDestroy();
         // EnemyManager の子要素を取得
         int childCount = transform.childCount;
         for (int i = childCount - 1; i >= 0; i--)
